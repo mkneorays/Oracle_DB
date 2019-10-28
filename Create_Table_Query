@@ -1,0 +1,20 @@
+1> To create table like CUSTOMER : 
+    CREATE TABLE customer( id number(10) NOT NULL,name varchar2(10) NOT NULL, city varchar2(10) ); 
+    
+2> To CREATE TABLE Example with primary key : 
+    CREATE TABLE customers (customer_id number(10) NOT NULL, customer_name varchar2(50) NOT NULL,city varchar2(50),  
+    CONSTRAINT customers_pk PRIMARY KEY (customer_id));
+    
+NOTE : A primary key is a single field or combination of fields that contains a unique record. 
+       It must be filled. None of the field of primary key can contain a null value. A table can have only one primary key.
+       
+3>  Copying all columns of another table in new Table.Current table won't perform any constraints rules of existing table.
+    CREATE TABLE newcustomers AS (SELECT *   FROM customers  WHERE customer_id < 5000);  
+4>
+
+5
+6
+7
+8
+9
+10
