@@ -1,0 +1,30 @@
+
+In Oracle, Primary key is the column which has unique values, and it cannot be null.
+In a table, there can be only one primary key.
+
+1> To see all tables which is exist in currnrt database : 
+     SELECT OBJECT_NAME FROM USER_OBJECTS WHERE OBJECT_TYPE ='TABLE';
+     
+2> To see all tables which is exist in whole database :
+     SELECT owner, table_name FROM all_tables;
+     
+3> To see all columns name from table(table name is case-sensitive like CUSTOMER) :
+    SELECT COLUMN_NAME from user_tab_columns where TABLE_NAME='CUSTOMER';
+
+4> To create table with primary key : 
+   CREATE TABLE customer(id number(10) NOT NULL,name varchar2(50),city varchar2(50), CONSTRAINT customers_pk PRIMARY KEY (id));
+   
+5> Insert value in customer table : 
+     Insert into customer values(1,'ram','ayodhya');
+
+6> To Disable primary key in customer table : 
+     ALTER TABLE customer DISABLE CONSTRAINT customers_pk ;
+   
+7> To Enable primary key in customer table :
+     ALTER TABLE customer  ENABLE CONSTRAINT customers_pk; 
+
+8> To Drop primary key in customer table :
+     ALTER TABLE customer DROP CONSTRAINT customers_pk ; 
+  
+9> To Add primary key in customer table :  customer(table name),customers_pk(primary key column name)
+     ALTER TABLE customer ADD CONSTRAINT customers_pk PRIMARY KEY(id);  
