@@ -1,6 +1,6 @@
 
 In Oracle, Primary key is the column which has unique values, and it cannot be null.
-In a table, there can be only one primary key.
+In a table, there can be only one primary key column and we can apply on multiple columns only once.
 
 1> To see all tables which is exist in currnrt database : 
      SELECT OBJECT_NAME FROM USER_OBJECTS WHERE OBJECT_TYPE ='TABLE';
@@ -28,3 +28,6 @@ In a table, there can be only one primary key.
   
 9> To Add primary key in customer table :  customer(table name),customers_pk(primary key column name)
      ALTER TABLE customer ADD CONSTRAINT customers_pk PRIMARY KEY(id);  
+
+10> To add primary key on multiple column but once only.
+     ALTER TABLE student ADD CONSTRAINT student_pk PRIMARY KEY (id,name);
