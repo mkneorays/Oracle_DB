@@ -8,9 +8,13 @@
 NOTE : A primary key is a single field or combination of fields that contains a unique record. 
        It must be filled. None of the field of primary key can contain a null value. A table can have only one primary key.
        
-3>  Copying all columns of another table in new Table.Current table won't perform any constraints rules of existing table.
+3> Copying all columns of another table in new Table.Current table won't perform any constraints rules of existing table.
+   excluding constraints, keys, indexes, identity property and data rows.
     CREATE TABLE newcustomers AS (SELECT *   FROM customers  WHERE customer_id < 5000);  
-4>
+
+4> To copy structure of the table not data nothing but rows only column name will create with blank table excluding
+   constraints, keys, indexes, identity property and data rows.
+    create table dept1 AS select * from departments where 1=2;
 
 5
 6
