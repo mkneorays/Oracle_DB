@@ -25,9 +25,16 @@ NOTE : A primary key is a single field or combination of fields that contains a 
 --------------------------------------------------------------------------------------------------------------------------
 ALTER TABLE QUERY : 
 
-1>
-
+1> ALTER TABLE customers ADD customer_age varchar2(50); 
+2> ALTER TABLE customers ADD (customer_type varchar2(50),customer_address varchar2(50)); 
+3> ALTER TABLE customers MODIFY customer_name varchar2(100) not null;                        (modify single column)
+Note : Now the column column_name in the customer's table is modified to varchar2 (100) and  
+       forced the column to not allow null values. 
+4> ALTER TABLE customers MODIFY (customer_name varchar2(100) not null, city varchar2(100));  (modify multiple column)
+5> ALTER TABLE customers DROP COLUMN customer_name;               (This will drop the customer_name column from the table.)
+6> ALTER TABLE customers RENAME COLUMN customer_name to cname;    (This will rename the column customer_name into cname.)
+7> ALTER TABLE customers RENAME TO Suplier;                   (This will rename the customer table into "Suplier" table.)
 --------------------------------------------------------------------------------------------------------------------------
 DROP TABLE QUERY : 
 
-1>
+1> DROP TABLE customers;                   (This will drop the table named customers.)
