@@ -22,4 +22,12 @@ NOTE : A primary key is a single field or combination of fields that contains a 
     CREATE TABLE newcustomers3 AS (SELECT regularcustomers.rcustomer_id, regularcustomers.rc_city, 
     irregularcustomers.ircustomer_name  FROM regularcustomers, irregularcustomers  WHERE 
     regularcustomers.rcustomer_id = irregularcustomers.ircustomer_id  AND regularcustomers.rcustomer_id < 5000);   
+--------------------------------------------------------------------------------------------------------------------------
+ALTER TABLE QUERY : 
 
+1>
+
+--------------------------------------------------------------------------------------------------------------------------
+DROP TABLE QUERY : 
+
+1>
