@@ -31,3 +31,16 @@ In a table, there can be only one primary key column and we can apply on multipl
 
 10> To add primary key on multiple column but once only.
      ALTER TABLE student ADD CONSTRAINT student_pk PRIMARY KEY (id,name);
+   
+ 11> To see in which column of table, primary key applied or its exist or not : CUSTOMER(table name should be capital)
+    SELECT cols.table_name, cols.column_name, cols.position, cons.status, cons.owner
+    FROM all_constraints cons, all_cons_columns cols
+    WHERE cols.table_name = 'CUSTOMER'
+    AND cons.constraint_type = 'P'
+    AND cons.constraint_name = cols.constraint_name
+    AND cons.owner = cols.owner
+    ORDER BY cols.table_name, cols.position;
+    
+ 12> To see constraint name(Primary key) in a table :  CUSTOMER(table name should be capital)
+ 
+    SELECT * FROM user_cons_columns WHERE table_name = 'CUSTOMER';
